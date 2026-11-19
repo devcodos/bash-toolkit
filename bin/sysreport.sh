@@ -38,9 +38,19 @@ ps -eo pid,comm,%cpu,%mem --sort=-%cpu | head -n 6 || true
 echo
 echo "== Failed services =="
 if command -v systemctl >/dev/null; then
-    failed=$(systemctl --failed --no-legend 2>/dev/null || true)
+    ignore="${SYSREPORT_IGNORE:-}"
+    failed=""
+    while read -r unit _; do
+        [[ -z "$unit" ]] && continue
+        skip=0
+        for pattern in $ignore; do
+            # shellcheck disable=SC2053
+            [[ "$unit" == $pattern ]] && skip=1
+        done
+        (( skip )) || failed+="$unit"$'\n'
+    done < <(systemctl --failed --no-legend --plain 2>/dev/null || true)
     if [[ -n "$failed" ]]; then
-        echo "$failed"
+        printf '%s' "$failed"
         status=1
     else
         echo "none"

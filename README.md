@@ -14,8 +14,11 @@ Bash tools for Linux administration. No dependencies beyond Bash and standard Li
 
     ./bin/sysreport.sh
     ./bin/sysreport.sh 90
+    SYSREPORT_IGNORE="vboxadd*.service" ./bin/sysreport.sh
 
 The optional argument is the disk usage percentage that triggers a warning (default 80).
+
+Set `SYSREPORT_IGNORE` to a space-separated list of service names (wildcards allowed) to leave known failures out of the report.
 
 Exit codes: `0` healthy, `1` a warning was raised (disk full or failed service), `2` bad input.
 
