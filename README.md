@@ -9,12 +9,14 @@ Bash tools for Linux administration. No dependencies beyond Bash and standard Li
 | Tool | What it does |
 |---|---|
 | `bin/sysreport.sh` | One-screen health report: uptime, load, memory, disk usage, top processes, failed services |
+| `bin/backup.sh` | Creates a timestamped .tar.gz of a directory and keeps only the newest N backups |
 
 ## Usage
 
     ./bin/sysreport.sh
     ./bin/sysreport.sh 90
     SYSREPORT_IGNORE="vboxadd*.service" ./bin/sysreport.sh
+    ./bin/backup.sh ~/projects ~/backups 5
 
 The optional argument is the disk usage percentage that triggers a warning (default 80).
 
