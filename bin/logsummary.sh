@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # logsummary.sh - summarize failed SSH logins and sudo usage from the auth log or journal
+# Copyright (C) 2026 devcodos (https://github.com/devcodos)
 # Licensed under GPL-3.0. See the LICENSE file in the repo root.
 set -euo pipefail
 

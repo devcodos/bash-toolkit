@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # sysreport.sh - one-screen system health report
+# Copyright (C) 2026 devcodos (https://github.com/devcodos)
 # Licensed under GPL-3.0. See the LICENSE file in the repo root.
 set -euo pipefail
 
