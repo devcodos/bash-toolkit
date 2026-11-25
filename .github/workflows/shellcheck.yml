@@ -10,4 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Lint shell scripts
-        run: shellcheck --severity=warning bin/*.sh
+        run: shellcheck --severity=warning bin/*.sh tests/*.sh
+      - name: Run smoke tests
+        run: bash tests/smoke.sh
