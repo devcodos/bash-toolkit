@@ -7,7 +7,7 @@ set -euo pipefail
 threshold="${1:-80}"
 if ! [[ "$threshold" =~ ^[0-9]+$ ]] || (( threshold < 1 || threshold > 100 )); then
     echo "Usage: $0 [disk_warn_percent]   (1-100, default 80)" >&2
-    exit 9
+    exit 2
 fi
 
 status=0

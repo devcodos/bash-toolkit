@@ -4,6 +4,8 @@ Bash tools for Linux administration. No dependencies beyond Bash and standard Li
 
 ![ShellCheck](https://github.com/devcodos/bash-toolkit/actions/workflows/shellcheck.yml/badge.svg)
 
+![Gitleaks](https://github.com/devcodos/bash-toolkit/actions/workflows/gitleaks.yml/badge.svg)
+
 ## Tools
 
 | Tool | What it does |
